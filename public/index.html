@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="test"></div>
+<script>
+    const ws = new WebSocket("ws://172.105.37.134:8080")
+    document.getElementById('test').innerHTML = "Loading.....";    
+    ws.onmessage = (msg) => {
+        document.getElementById('test').innerHTML = msg.data;
+    }
+</script>
+</body>
+</html>
